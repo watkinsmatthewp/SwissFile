@@ -60,6 +60,11 @@ namespace SwissFile.Core
 
         #endregion
 
+        protected FileTask()
+        {
+
+        }
+
         #region Abstract methods
 
         protected abstract T ExecuteInternal();

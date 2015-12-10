@@ -29,6 +29,12 @@ namespace SwissFile.Console
             RequireValue = true
         };
 
+        internal static readonly Arg REPLACE_EXISTING = new Arg("replace-existing", "Replace Existing")
+        {
+            Description = "Whether or not to replace the destination if it already exists",
+            RequireValue = false
+        };
+
         internal static readonly Arg ENC = new Arg("enc", "Encoding")
         {
             Description = "The encoding to use for this command",

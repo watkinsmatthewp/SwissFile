@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Arg.cs" />
     <Compile Include="Cmd.cs" />
+    <Compile Include="Commands\CopyFileCommand.cs" />
     <Compile Include="CommonArgs.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="CommandParser.cs" />

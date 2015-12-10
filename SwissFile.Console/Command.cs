@@ -7,7 +7,7 @@ using SwissFile.Core;
 
 namespace SwissFile.Console
 {
-    internal abstract class Command
+    public abstract class Command
     {
         internal string Name { get; private set; }
         internal string Description { get; set; }

@@ -8,7 +8,7 @@ using SwissFile.Core;
 
 namespace SwissFile.Console
 {
-    class SplitFileCommand : Command
+    public class SplitFileCommand : Command
     {
         // Args specific to this command
         private static readonly Arg PRESERVE_TEXT_LINES = new Arg("pres-text-lines", "Preserve Text Lines")

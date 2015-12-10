@@ -26,6 +26,7 @@ namespace SwissFile.Core
         public string FileExtension { get; set; }
 
         public SplitFileTask(FileInfo inputFile, DirectoryInfo destinationDirectory)
+            : base()
         {
             // Defaults: 1 MB chunks, don't treat as text
             MaxOutputFileByteSize = 1000000;

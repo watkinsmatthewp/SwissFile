@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace SwissFile.Console
 {
-    internal class Arg
+    public class Arg
     {
-        internal string Key { get; set; }
-        internal string Name { get; set; }
-        internal string Description { get; set; }
-        internal bool RequireValue { get; set; }
-        internal List<string> ExampleValues { get; set; }
+        public string Key { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public bool RequireValue { get; set; }
+        public List<string> ExampleValues { get; set; }
 
-        internal Arg(string key, string name)
+        public Arg(string key, string name)
         {
             if (String.IsNullOrWhiteSpace(key))
             {

@@ -43,6 +43,8 @@
     <Compile Include="FileTask.cs" />
     <Compile Include="FileTaskResult.cs" />
     <Compile Include="FileTaskResultStatus.cs" />
+    <Compile Include="FileTasks\CopyFile\CopyFileTask.cs" />
+    <Compile Include="FileTasks\CopyFile\CopyFileTaskResult.cs" />
     <Compile Include="FileTasks\SplitFile\SplitFileTask.cs" />
     <Compile Include="FileTasks\SplitFile\SplitFileTaskResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
