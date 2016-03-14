@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SwissFile.Console
 {
-    internal static class Cmd
+    internal static class SysOut
     {
         internal static void Print(string fmt, params object[] args)
         {

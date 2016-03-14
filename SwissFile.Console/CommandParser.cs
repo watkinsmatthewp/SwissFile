@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 namespace SwissFile.Console
 {
     internal static class CommandParser
-    {
-        private static readonly Command[] ALL_COMMANDS = new Command[]
-        {
-            new SplitFileCommand()
-        };
-        
+    {        
         internal static Command Parse(string[] cmdPieces)
         {
             if (cmdPieces == null || cmdPieces.Length == 0)
@@ -20,13 +15,13 @@ namespace SwissFile.Console
                 throw new ArgumentException("Cannot parse and empty command");
             }
 
-            Command command = ALL_COMMANDS.FirstOrDefault(c => cmdPieces[0].Equals(c.Name, StringComparison.OrdinalIgnoreCase));
-            if (command == null)
+            string cmdName = cmdPieces[0].Trim().ToLowerInvariant();
+            if (!Commands.AllComamnds.ContainsKey(cmdName))
             {
-                throw new Exception("There is no " + cmdPieces[0] + " command");
+                throw new Exception("There is no \"" + cmdName + "\" command");
             }
 
-            return command;
+            return Commands.AllComamnds[cmdName];
         }
     }
 }

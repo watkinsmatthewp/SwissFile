@@ -40,33 +40,33 @@ namespace SwissFile.Console
             }
             catch(Exception e)
             {
-                Cmd.Print("Error: {0}. Type {1} ? to show this command's help", e.ToString(), Name);
+                SysOut.Print("Error: {0}. Type {1} ? to show this command's help", e.ToString(), Name);
             }
         }
 
         private void ShowCommandHelp()
         {
-            Cmd.Print("------ BEGIN {0} COMMAND HELP ------", Name.ToUpperInvariant());
-            Cmd.Print("Description: " + (String.IsNullOrWhiteSpace(Description) ? "This command has no description" : Description));
-            Cmd.Print("Required arguments:");
+            SysOut.Print("------ BEGIN {0} COMMAND HELP ------", Name.ToUpperInvariant());
+            SysOut.Print("Description: " + (String.IsNullOrWhiteSpace(Description) ? "This command has no description" : Description));
+            SysOut.Print("Required arguments:");
             foreach (Arg arg in RequiredArgKeys)
             {
-                Cmd.Print("- {0} ({1})", arg.Name, arg.Key);
+                SysOut.Print("- {0} ({1})", arg.Name, arg.Key);
                 if (!String.IsNullOrWhiteSpace(arg.Description))
                 {
-                    Cmd.Print("  {0}", arg.Description);
+                    SysOut.Print("  {0}", arg.Description);
                 }
-                Cmd.Print("  A value is {0}required for this argument key", (arg.RequireValue ? "" : "not "));
+                SysOut.Print("  A value is {0}required for this argument key", (arg.RequireValue ? "" : "not "));
                 if (arg.ExampleValues != null && arg.ExampleValues.Count > 0)
                 {
-                    Cmd.Print("  Example values:");
+                    SysOut.Print("  Example values:");
                     foreach (string exanpleValue in arg.ExampleValues)
                     {
-                        Cmd.Print("  - {0}", exanpleValue);
+                        SysOut.Print("  - {0}", exanpleValue);
                     }
                 }
             }
-            Cmd.Print("------ END {0} COMMAND HELP ------", Name.ToUpperInvariant());
+            SysOut.Print("------ END {0} COMMAND HELP ------", Name.ToUpperInvariant());
         }
 
         private void ParseAndExecuteCommand(Dictionary<string, string> args)

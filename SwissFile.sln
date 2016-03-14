@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissFile.Core", "SwissFile.Core\SwissFile.Core.csproj", "{B9A2C44C-24B0-4FF4-83E5-2A66B2C2A82F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissFile.Console", "SwissFile.Console\SwissFile.Console.csproj", "{AECDD1E5-502E-49EA-9D0A-B0157BC655BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissFile.GUI", "SwissFile.GUI\SwissFile.GUI.csproj", "{C8FE9464-C162-4808-AF2A-170648BCD715}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{AECDD1E5-502E-49EA-9D0A-B0157BC655BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AECDD1E5-502E-49EA-9D0A-B0157BC655BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AECDD1E5-502E-49EA-9D0A-B0157BC655BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8FE9464-C162-4808-AF2A-170648BCD715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8FE9464-C162-4808-AF2A-170648BCD715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8FE9464-C162-4808-AF2A-170648BCD715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8FE9464-C162-4808-AF2A-170648BCD715}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

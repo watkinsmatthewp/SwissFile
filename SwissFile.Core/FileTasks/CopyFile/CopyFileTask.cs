@@ -13,6 +13,7 @@ namespace SwissFile.Core
         public FileInfo DestinationFile { get; private set; }
 
         public bool OverwriteDestinationFile { get; set; }
+        public bool DeleteSourceFileAfterCopy { get; set; }
 
         public CopyFileTask(FileInfo sourceFile, FileInfo destinationFile)
             : base()
@@ -33,6 +34,10 @@ namespace SwissFile.Core
             }
 
             SourceFile.CopyTo(DestinationFile.FullName, OverwriteDestinationFile);
+            if (DeleteSourceFileAfterCopy)
+            {
+                SourceFile.Delete();
+            }
             return new CopyFileTaskResult();
         }
     }

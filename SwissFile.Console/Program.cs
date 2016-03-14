@@ -18,7 +18,7 @@ namespace SwissFile.Console
             {
                 while (true)
                 {
-                    string line = Cmd.ReadLine().Trim();
+                    string line = SysOut.ReadLine().Trim();
                     if (line.Equals("q") || line.Equals("quit") || line.Equals("exit") )
                     {
                         break;

@@ -9,6 +9,8 @@ namespace SwissFile.Core
 {
     public class SplitFileTask : FileTask<SplitFileTaskResult>
     {
+        private static readonly byte[] NEW_LINE = Encoding.UTF8.GetBytes(Environment.NewLine);
+
         private long _totalBytesReadFromInputFile = 0;
         private long _totalInputFileByteSize = 0;
         
@@ -86,7 +88,7 @@ namespace SwissFile.Core
                         }
 
                         // Write the line
-                        WriteToCurrentOutputStream(bytes);
+                        WriteToCurrentOutputStream(bytes, true);
                         if (reader.EndOfStream)
                         {
                             // Last piece
@@ -140,7 +142,7 @@ namespace SwissFile.Core
             }
         }
 
-        private void WriteToCurrentOutputStream(byte[] bytes)
+        private void WriteToCurrentOutputStream(byte[] bytes, bool appendNewLine = false)
         {
             if (_currentOutputFileStream == null)
             {
@@ -153,6 +155,11 @@ namespace SwissFile.Core
             // Write the bytes
             _currentOutputFileStream.Write(bytes, 0, bytes.Length);
             _bytesWrittenToCurrentOutputFile += bytes.Length;
+            if (appendNewLine)
+            {
+                _currentOutputFileStream.Write(NEW_LINE, 0, NEW_LINE.Length);
+                _bytesWrittenToCurrentOutputFile += NEW_LINE.Length;
+            }
         }
 
         private void FlushCurrentOutputStreamToFile(SplitFileTaskResult result)
@@ -170,7 +177,7 @@ namespace SwissFile.Core
 
         private string GetNextFilePath()
         {
-            string fileName = (++_filePieceID).ToString("0000") + (String.IsNullOrWhiteSpace(FileExtension) ? FileExtension : "");
+            string fileName = (++_filePieceID).ToString("0000") + (!string.IsNullOrWhiteSpace(FileExtension) ? "." + FileExtension : "");
             return Path.Combine(DestinationDirectory.FullName, fileName);
         }
     }
